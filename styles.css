@@ -1,1 +1,55 @@
+body {
+    color: #ffffff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    padding: 1px;
+    background-color: black;
+    align-content: center;
+  }
+  
+  .destino {
+    background-color: #000000;
+    border: 1px solid #bbaf08;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 5px;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
+  }
+  
+  .destino img {
+    max-width: 30%;
+    border-radius: 5px;
+  }
+  
+  .destino h3 {
+    margin-top: 5px;
+    font-size: 23px;
+    color: #ffdbc0;
+  }
+  
+  .destino p {
+    margin-top: 1px;
+    color: #777;
+  }
 
+  .cabecalho{
+    color: #dad713;
+    background-color: #000000;
+    border: 1px solid #c0923c;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+  }
+
+
+
+
+  
