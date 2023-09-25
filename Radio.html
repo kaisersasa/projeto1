@@ -23,6 +23,43 @@
             <button id="nextButton">Próxima</button>
         </div>
     </div>
+
+    <styles>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.music-player {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.album-cover img {
+    max-width: 100%;
+    height: auto;
+}
+
+.controls button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #0f813a;
+}
+
+  </styles>
     <script>
       const audio = document.getElementById("audio");
 const playPauseButton = document.getElementById("playPauseButton");
@@ -124,41 +161,6 @@ function loadSong(index) {
 loadSong(currentSongIndex);
 
     </script>
-  <styles>
-    body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.music-player {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-}
-
-.album-cover img {
-    max-width: 100%;
-    height: auto;
-}
-
-.controls button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #1db954;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.controls button:hover {
-    background-color: #0f813a;
-}
-
-  </styles>
+  
 </body>
 </html>
