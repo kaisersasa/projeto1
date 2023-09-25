@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Spotify Clone</title>
+</head>
+<body>
+    <div class="music-player">
+        <h1>Música Tocando</h1>
+        <div class="album-cover">
+            <img src="jorgemateus.webp" alt="Capa do Álbum">
+        </div>
+        <h2>Jorge&Mateus</h2>
+        <audio id="audio" controls>
+            <source src="Dói.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <div class="controls">
+            <button id="prevButton">Anterior</button>
+            <button id="playPauseButton">Play</button>
+            <button id="nextButton">Próxima</button>
+        </div>
+    </div>
+    <script>
+      const audio = document.getElementById("audio");
+const playPauseButton = document.getElementById("playPauseButton");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+
+const songs = [
+    {
+        name: "Dói - Jorge&Mateus",
+        src: "Dói.mp3",
+        cover: "cover1.jpg"
+    },
+    {
+        name: "Cheirosa - Jorge&Mateus",
+        src: "cheirosa.mp3",
+        cover: "cover2.jpg"
+    },
+    {
+        name: "Duas Metades - Jorge&Mateus",
+        src: "duasmetades.mp3",
+        cover: "cover3.jpg"
+    },
+    {
+        name: "Mil Anos - Jorge&Mateus",
+        src: "milanos.mp3",
+        cover: "cover3.jpg"
+    },
+    {
+        name: "Trás Ela - Jorge&Mateus",
+        src: "trasela.mp3",
+        cover: "cover3.jpg"
+    },
+    {
+        name: "Te Levo Comigo - Jorge&Mateus",
+        src: "mtelevocmg.mp3",
+        cover: "cover3.jpg"
+    },
+    {
+        name: "Te Querer - Jorge&Mateus",
+        src: "tequerer.mp3",
+        cover: "cover3.jpg"
+    },
+    {
+        name: "Seu Astral - Jorge&Mateus",
+        src: "suaastral.mp3",
+        cover: "cover3.jpg"
+    },
+    {
+        name: "Sorrir",
+        src: "Sorrir.mp3",
+        cover: "cover3.jpg"
+    },
+    {
+        name: "Enquanto Houver Razões",
+        src: "houverrazoes.mp3",
+        cover: "cover3.jpg"
+    }
+];
+
+let currentSongIndex = 0;
+let isPlaying = false;
+
+playPauseButton.addEventListener("click", togglePlayPause);
+prevButton.addEventListener("click", playPrevious);
+nextButton.addEventListener("click", playNext);
+
+function togglePlayPause() {
+    if (isPlaying) {
+        audio.pause();
+        playPauseButton.textContent = "Play";
+    } else {
+        audio.play();
+        playPauseButton.textContent = "Pause";
+    }
+    isPlaying = !isPlaying;
+}
+
+function playPrevious() {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    loadSong(currentSongIndex);
+}
+
+function playNext() {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    loadSong(currentSongIndex);
+}
+
+function loadSong(index) {
+    const song = songs[index];
+    audio.src = song.src;
+    document.getElementById("songName").textContent = song.name;
+    document.getElementById("albumCover").src = song.cover;
+    audio.play();
+    isPlaying = true;
+    playPauseButton.textContent = "Pause";
+}
+
+// Inicializa a primeira música
+loadSong(currentSongIndex);
+
+    </script>
+  <styles>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.music-player {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.album-cover img {
+    max-width: 100%;
+    height: auto;
+}
+
+.controls button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #0f813a;
+}
+
+  </styles>
+</body>
+</html>
